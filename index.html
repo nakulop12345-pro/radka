@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>little love note ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+:root{--rose:#e78eaa;--deep:#a95778;--ink:#765365;--cream:#fff9f7;--blush:#ffe5ec}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:'DM Sans',sans-serif;background:linear-gradient(145deg,#fff8f5 0%,#ffeaf0 48%,#fff4f7 100%);overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;width:330px;height:330px;border-radius:50%;filter:blur(65px);opacity:.42;z-index:-1}
+body:before{background:#ffc5d7;top:-110px;left:-100px}body:after{background:#f6cde2;right:-120px;bottom:-100px}
+header{position:fixed;z-index:10;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:17px 22px;background:#fff9f7bd;backdrop-filter:blur(14px);border-bottom:1px solid #f6dce5}
+.brand{font-family:'Playfair Display',serif;font-size:19px;color:var(--deep)}.counter{font-size:12px;color:#b58a9b;letter-spacing:1px}
+main{min-height:100vh;display:grid;place-items:center;padding:100px 18px 65px}
+.page{display:none;width:min(650px,100%);text-align:center;animation:pop .6s cubic-bezier(.2,.8,.2,1)}
+.page.active{display:block}
+@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.panel{position:relative;padding:clamp(28px,6vw,55px) clamp(22px,6vw,58px);border:1px solid #f5d9e3;border-radius:32px;background:#ffffffc9;box-shadow:0 22px 70px #b36b851c}
+.panel:before{content:"";position:absolute;inset:8px;border:1px dashed #f2d1dd;border-radius:25px;pointer-events:none}
+.kicker{font-size:10px;text-transform:uppercase;letter-spacing:3px;color:#c17f98;font-weight:700}
+h1,h2{font-family:'Playfair Display',serif;font-weight:500;color:#a65d7b}
+h1{font-size:clamp(42px,9vw,70px);line-height:1.06;margin:18px 0}
+h2{font-size:clamp(31px,7vw,46px);margin:15px 0 20px}
+p{font-size:16px;line-height:1.9;color:#826878;margin:13px auto;max-width:510px}
+.bigheart{font-size:52px;display:block;margin:12px auto;filter:drop-shadow(0 7px 8px #eaa4bc55);animation:beat 1.8s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.12)}30%{transform:scale(1)}}
+.sticker{display:inline-block;background:#fff0f4;border:1px solid #f6d4df;border-radius:20px;padding:10px 16px;font-size:13px;color:#ad7188;margin:10px 4px}
+.actions{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:27px;min-height:52px}
+button{border:0;border-radius:999px;padding:14px 24px;font:600 14px 'DM Sans',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s}
+button:hover{transform:translateY(-3px)}
+.primary{color:white;background:linear-gradient(135deg,#e99ab4,#d9799b);box-shadow:0 9px 22px #d9799b45}
+.secondary{color:#a86d84;background:#fff;border:1px solid #efcbd8;box-shadow:0 5px 15px #d9a8b51c}
+.smallnote{font-size:12px;color:#b18d9d;margin-top:22px}
+.quote{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:#ad7188}
+.dots{position:fixed;bottom:18px;left:0;right:0;display:flex;justify-content:center;gap:7px;z-index:3}
+.dot{height:7px;width:7px;border-radius:9px;background:#edcbd7;transition:.25s}.dot.on{width:23px;background:#d989a5}
+.float{position:fixed;bottom:-35px;z-index:-1;pointer-events:none;opacity:.55;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+#answer{min-height:42px;max-width:450px;margin:18px auto 0;padding:12px 15px;border-radius:16px;background:#fff2f6;color:#a56e84;font-size:13px;line-height:1.6}
+#noButton{transition:left .2s,top .2s,transform .2s}
+@media(max-width:420px){header{padding:14px 16px}.panel{border-radius:26px}p{font-size:15px}}
+</style>
+</head>
+<body>
+<header><div class="brand">♡ a little note for you</div><div class="counter" id="counter">01 / 05</div></header>
+<main>
+<section class="page active">
+ <div class="panel">
+  <div class="kicker">a tiny website, with a big feeling</div>
+  <span class="bigheart">💗</span>
+  <h1>For you,<br>my favourite person.</h1>
+  <p>I made you a little something. It's soft, simple, and made with care. You can read it whenever you feel like it.</p>
+  <span class="sticker">୨୧ made with love ୨୧</span>
+  <div class="actions"><button class="primary" onclick="go(1)">Open your letter ♡</button></div>
+  <div class="smallnote">No rush. Take your time. 🌷</div>
+ </div>
+</section>
+<section class="page">
+ <div class="panel">
+  <div class="kicker">page two · from my heart</div><span class="bigheart">🧸</span>
+  <h2>I'm truly sorry.</h2>
+  <p>I know things haven't been easy between us. I'm sorry for the ways I hurt you, for the times I didn't listen well enough, and for the moments I made you feel anything less than valued.</p>
+  <p>I won't make excuses. I know that saying sorry doesn't magically fix everything, but I wanted to take responsibility and say it sincerely.</p>
+  <div class="actions"><button class="secondary" onclick="go(0)">← Back</button><button class="primary" onclick="go(2)">Next ♡</button></div>
+ </div>
+</section>
+<section class="page">
+ <div class="panel">
+  <div class="kicker">page three · little memories</div><span class="bigheart">🌸</span>
+  <h2>The good still means a lot.</h2>
+  <p>I'll always be grateful for the laughs, the silly little moments, the conversations, and all the memories that made normal days feel special.</p>
+  <p>I'm not saying this to make you feel guilty. I just never want you to think those moments meant nothing to me. They meant so much.</p>
+  <span class="sticker">you were a beautiful chapter ♡</span>
+  <div class="actions"><button class="secondary" onclick="go(1)">← Back</button><button class="primary" onclick="go(3)">Next ♡</button></div>
+ </div>
+</section>
+<section class="page">
+ <div class="panel">
+  <div class="kicker">page four · if life allows</div><span class="bigheart">🦋</span>
+  <h2>I'd like to do better.</h2>
+  <p>If you ever want to talk, I'd like to listen properly, understand what hurt you, and show change through actions instead of promises.</p>
+  <p>I would love the chance to rebuild something healthier, but only if that's something you want too. I will respect your space and your decision.</p>
+  <div class="actions"><button class="secondary" onclick="go(2)">← Back</button><button class="primary" onclick="go(4)">One last thing ♡</button></div>
+ </div>
+</section>
+<section class="page">
+ <div class="panel">
+  <div class="kicker">the final page · a little question</div><span class="bigheart">💞</span>
+  <h2>Would you like to try fixing things with me?</h2>
+  <p>We don't have to figure everything out today. If you want to talk, we can take it one small step at a time.</p>
+  <div class="actions" id="choiceArea">
+   <button class="primary" onclick="yesAnswer()">YES 💗</button>
+   <button class="secondary" id="noButton" onclick="noAnswer()">NO</button>
+  </div>
+  <div id="answer" aria-live="polite">Psst… the NO button is feeling a little shy today 🙈</div>
+  <div class="actions"><button class="secondary" onclick="go(0)">Read from the beginning ↺</button></div>
+ </div>
+</section>
+</main>
+<div class="dots" id="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<script>
+let current=0, dodges=0;
+const pages=[...document.querySelectorAll('.page')], dots=[...document.querySelectorAll('.dot')];
+function go(n){current=Math.max(0,Math.min(4,n));pages.forEach((p,i)=>p.classList.toggle('active',i===current));dots.forEach((d,i)=>d.classList.toggle('on',i===current));document.getElementById('counter').textContent=String(current+1).padStart(2,'0')+' / 05';window.scrollTo({top:0,behavior:'smooth'});}
+function yesAnswer(){document.getElementById('answer').textContent='That means a lot. 💗 We can talk gently, take our time, and see how we both feel.';document.getElementById('noButton').style.display='none';}
+function noAnswer(){document.getElementById('answer').textContent='Thank you for being honest. I respect your answer and wish you happiness. ♡';document.getElementById('noButton').style.display='none';}
+const no=document.getElementById('noButton');
+no.addEventListener('pointerenter',()=>{if(dodges>=4)return;dodges++;const area=document.getElementById('choiceArea');const dx=Math.min(100,area.clientWidth/3);no.style.position='relative';no.style.left=(Math.random()*dx*2-dx)+'px';no.style.top=(Math.random()*34-17)+'px';if(dodges===4)document.getElementById('answer').textContent='Hehe, okay, no more running 🙈 Both answers are yours to choose. ♡';});
+for(let i=0;i<18;i++){const f=document.createElement('span');f.className='float';f.textContent=['♡','✿','୨୧','·'][i%4];f.style.left=Math.random()*100+'%';f.style.animationDuration=(9+Math.random()*11)+'s';f.style.animationDelay=(-Math.random()*18)+'s';f.style.fontSize=(13+Math.random()*17)+'px';document.body.appendChild(f);}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(current+1);if(e.key==='ArrowLeft')go(current-1)});
+</script>
+</body>
+</html>
